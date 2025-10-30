@@ -23,7 +23,7 @@ int main()
 
 	printf("\n       RAINHA\n");
 
-	for (int r = 8; r >= 1; r--) //se o inicializador for maior ou igual um, o  codigo funcionará.
+	for (int r = 8; r >= 1; r--) //enquanto inicializador for maior que um, o  codigo funcionará.
 	{
 		//printf("•••••••rainha se movendo.....\n");
 		printf("[%d]_Esquerda\n", r);
@@ -31,5 +31,23 @@ int main()
 
       printf("\n");  
 
-     return 0;
+           // printf("\n        Cavalo\n");
+	int cavalo = 1;//inicializador
+
+	while (cavalo>=1)//loop externo, movimento para baixo.
+	{  printf("\nMOVIMENTO DO CAVALO\n");
+		for (int e = 2; e >= 1; e--)//loop interno, movimento para a esquerda
+	      
+		{
+		   //printf("•••••••Cavalo se movendo•••••••\n");
+			printf("[%d]_esquerda\t",e);
+			
+		}
+		printf("\n");
+		//printf("•••••••Cavalo se movendo•••••••\n");
+		printf("[%d]|baixo\n",cavalo);
+        cavalo--;//decremento
+	
+    }
+    return 0;
 }
