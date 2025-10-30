@@ -1,53 +1,59 @@
 #include <stdio.h>
+//reversividade torre
+void movertorre(int casas)
+{
+	if (casas > 0)
+	{
+		movertorre(casas - 1);
+		printf("direita\n");
+	}
+}
+//reversividade e loop aninhado
+void moverbispo1(int casas)
+{
+	while (casas > 0)
+	{
+		//printf("cima\n");
+		for (int b = 1; b <= 1; b++)
+		{//imprime os valores de b
+			printf("cima\n");
+		}//imprimr os valore de "casas"
+		printf(", direita!\n");
+		casas--;
+	}
+}//reversividade rainha
+void moverrainha(int casas)
+{
+	if (casas > 0)
+	{
+		moverrainha(casas - 1);
+		printf("esquerda\n");
+	}
+}
+
 int main()
 {
-	int t = 5; // inicializador
-	printf("\n          TORRE \n");
-	do
+	printf("\ntorre:\n");
+	movertorre(5);
+	printf("\nbispo: \n");
+	moverbispo1(5);
+	printf("\n rainha:\n");
+	moverrainha(8);
+//loop aninhado com multiplas variaveis
+	printf("\nMovimento do Cavalo:\n");
+
+	int c = 1;//variavel de controle
+	for (int a = 1; a < 2; a++)
 	{
-		//printf("••••••torre se movendo....\n");
-		printf("[%d] Direita_\n", t);
-		t--; //decremento
-	} while (t >= 1);
-	//enquanto inicializador for maior que um, o  codigo funcionará.
-
-	int b = 5; //inicializador
-	printf("\n         BISPO\n");
-	while (b >= 1)
-	{
-		//printf("••••••••bispo se movendo....\n");
-		printf("[%d]/Cima|\n", b);
-		printf("[%d]/Direita_\n", b);
-		b--; //decremento
-	}
-
-	printf("\n       RAINHA\n");
-
-	for (int r = 8; r >= 1; r--) //enquanto inicializador for maior que um, o  codigo funcionará.
-	{
-		//printf("•••••••rainha se movendo.....\n");
-		printf("[%d]_Esquerda\n", r);
-	}
-
-      printf("\n");  
-
-           // printf("\n        Cavalo\n");
-	int cavalo = 1;//inicializador
-
-	while (cavalo>=1)//loop externo, movimento para baixo.
-	{  printf("\nMOVIMENTO DO CAVALO\n");
-		for (int e = 2; e >= 1; e--)//loop interno, movimento para a esquerda
-	      
+		for (int b = 2; b > 0; b--)
+		{// imprime valores de b
+			printf("cima\n");
+		}//imprime valores de a
+		if (c == 1)
 		{
-		   //printf("•••••••Cavalo se movendo•••••••\n");
-			printf("[%d]_esquerda\t",e);
-			
+			printf("direita\n");
 		}
-		printf("\n");
-		//printf("•••••••Cavalo se movendo•••••••\n");
-		printf("[%d]|baixo\n",cavalo);
-        cavalo--;//decremento
-	
-    }
-    return 0;
+	}c++;//incremento
+
+	return 0;
 }
